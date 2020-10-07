@@ -23,7 +23,6 @@ function parsePageData(pageData) {
     for (let i = 0; i < arrayResult.length; i += 1) {
         arrayResult[i] = Number.parseInt(arrayResult[i].replace(`			<\/span>`, ''), 10);
     }
-    console.log(arrayResult);
     return arrayResult;
 }
 
@@ -45,14 +44,7 @@ function saveSlotsData(parsedPageData) {
 const scrapJob = new CronJob('*/10 * * * *', async () => {
     const pageData = await getPageData();
     const parsedPageData = parsePageData(pageData);
-    saveSlotsData(parsePageData);
+    saveSlotsData(parsedPageData);
 });
 
-// scrapJob.start();
-
-async function dryRun() {
-    const pageData = await getPageData();
-    const parsedPageData = parsePageData(pageData);
-}
-
-dryRun();
+scrapJob.start();

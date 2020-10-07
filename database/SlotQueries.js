@@ -1,7 +1,7 @@
 const Slots = require('./SlotsModel').SlotsModel;
 
 const addSlotsData = (boulderToelz, climbToelz, boulderThalkirchen, climbThalkirchen,
-                      boulderGilching, climbGilching, boulderFreimann, climbFreimann) => 
+                      boulderGilching, climbGilching, boulderFreimann, climbFreimann) =>
     Slots.create({
         boulderToelz,
         climbToelz,
@@ -14,7 +14,7 @@ const addSlotsData = (boulderToelz, climbToelz, boulderThalkirchen, climbThalkir
 });
 
 const getSlotsData = () => Slots.findAll();
- 
+
 module.exports = {
     addSlotsData,
     getSlotsData,

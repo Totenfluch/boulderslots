@@ -1,7 +1,7 @@
 const sequelize = require('./database');
 const Sequelize = require('sequelize');
 
-const Slots = sequelize.define('interest', {
+const SlotsModel = sequelize.define('slots', {
     boulderToelz: Sequelize.INTEGER,
     climbToelz: Sequelize.INTEGER,
     boulderThalkirchen: Sequelize.INTEGER,
@@ -11,6 +11,8 @@ const Slots = sequelize.define('interest', {
     boulderFreimann: Sequelize.INTEGER,
     climbFreimann: Sequelize.INTEGER,
 });
+
+SlotsModel.sync();
 
 module.exports = {
   SlotsModel,
