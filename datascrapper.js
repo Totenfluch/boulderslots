@@ -27,14 +27,14 @@ function parsePageData(pageData) {
 }
 
 function saveSlotsData(parsedPageData) {
-    const boulderToelz = parsedPageData[0];
-    const climbToelz = parsedPageData[1];
-    const boulderThalkirchen = parsedPageData[2];
-    const climbThalkirchen = parsedPageData[3];
-    const boulderGilching = parsedPageData[4];
-    const climbGilching = parsedPageData[5];
-    const boulderFreimann = parsedPageData[6];
-    const climbFreimann = parsedPageData[7];
+    const climbToelz = parsedPageData[0];
+    const boulderToelz = parsedPageData[1];
+    const climbThalkirchen = parsedPageData[2];
+    const boulderThalkirchen = parsedPageData[3];
+    const climbGilching = parsedPageData[4];
+    const boulderGilching = parsedPageData[5];
+    const climbFreimann = parsedPageData[6];
+    const boulderFreimann = parsedPageData[7];
 
     slotsQueries.addSlotsData(boulderToelz, climbToelz, boulderThalkirchen, climbThalkirchen,
         boulderGilching, climbGilching, boulderFreimann, climbFreimann);
