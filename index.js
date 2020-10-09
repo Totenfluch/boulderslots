@@ -31,11 +31,11 @@ httpsServer.listen(CONFIG.PORT, () => {
     console.log(`API Server started on Port ${CONFIG.PORT}`);
 });
 
-httpsServer.get('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send({ data: 'online' });
 });
 
-httpsServer.get('/api/v1/slotsData', async (req, res) => {
+app.get('/api/v1/slotsData', async (req, res) => {
     const slotsData = await slotsQueries.getSlotsData();
     res.send({ data: slotsData });
 });
