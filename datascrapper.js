@@ -2,7 +2,7 @@
 
 const CronJob = require('cron').CronJob;
 const axios = require('axios');
-//const slotsQueries = require('./database/SlotQueries');
+const slotsQueries = require('./database/SlotQueries');
 
 async function getPageData() {
     let slotTrackerPage;
@@ -41,11 +41,16 @@ function saveSlotsData(parsedPageData) {
         boulderGilching, climbGilching, boulderFreimann, climbFreimann);
 }
 
-// Every 10 minutes
-const scrapJob = new CronJob('*/10 * * * *', async () => {
+async function scrapeJob() {
     const pageData = await getPageData();
     const parsedPageData = parsePageData(pageData);
     saveSlotsData(parsedPageData);
+}
+
+// Every 10 minutes
+const scrapJob = new CronJob('*/10 * * * *', async () => {
+    scrapeJob();
 });
 
 scrapJob.start();
+scrapJob();
