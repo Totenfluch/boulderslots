@@ -53,4 +53,4 @@ const scrapJob = new CronJob('*/10 * * * *', async () => {
 });
 
 scrapJob.start();
-scrapJob();
+scrapeJob();
